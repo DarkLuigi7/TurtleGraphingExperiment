@@ -26,17 +26,13 @@ def plotter(expr):
     color("blue")
     penup()
     for x in range(-100, 100):
+        pendown()
         try:
             y = eval(expr)
             #eval() function converts user input into a working python function
         except ZeroDivisionError or ValueError:
             continue
-        except ValueError:
-            continue
-        if y > 100 or y < -100:
-            continue
         goto(x, y)
-        pendown()
 
 
 while True:
